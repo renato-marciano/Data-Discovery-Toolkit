@@ -281,6 +281,8 @@ Dataset | Description | Labels |
     Alex Hocking</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/sweanan"><img src="https://avatars.githubusercontent.com/sweanan" width="100px;" alt=""/><br><sub><b>
     Swetha Anand</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/katriendg"><img src="https://avatars.githubusercontent.com/u/838216?v=4" width="100px;" alt=""/><br /><sub><b>
+    Katrien De Graeve</b></sub></a><br /></td>
   </tr>
 </table>
 
