@@ -113,7 +113,7 @@ A new Synapse workspace and all cluster configuration and notebooks can be deplo
 
 1) Download and install [jq](https://stedolan.github.io/jq/download/), a lightweight and flexible command-line JSON processor
 
-1) Azure Data Lake Storage Gen2 storage account - The Azure Synapse workspace needs to be able to read and write to the selected ADLS Gen2 account. In addition, for any storage account that you link as the primary storage account, you must have enabled hierarchical namespace at the creation of the storage account, as described on the Create a Storage Account page. More info on creating Azure Data Lake Storage can be found [here](https://learn.microsoft.com/en-us/azure/storage/blobs/create-data-lake-storage-account)
+1) Azure Data Lake Storage Gen2 storage account - The Azure Synapse workspace needs to be able to read and write to the selected ADLS Gen2 account. In addition, for any storage account that you link as the primary storage account, you must have enabled hierarchical namespace at the creation of the storage account, as described on the Create a Storage Account page. More info on creating Azure Data Lake Storage can be found [here](https://learn.microsoft.com/en-us/azure/storage/blobs/create-data-lake-storage-account). This existing or new account also needs a Blob Container to be created with a chosen name to be supplied below in the environment variable `BlobContainerName`. For example, call your container `share`.
 
 #### Deployment steps
 
@@ -135,12 +135,12 @@ A new Synapse workspace and all cluster configuration and notebooks can be deplo
 SynapseResourceGroup=
 # The region of the Synapse Resource Group
 Region=
-# The ADLS Storage Account name
+# The existing ADLS Storage Account name
 StorageAccountName=
-# The resource group of the ADLS storage account
+# The existing resource group of the ADLS storage account
 StorageAccountResourceGroup=
-# The name of the file share within the ADLS storage account
-FileShareName=
+# The name of the existing Blob Container within the ADLS Gen 2 storage account mentioned above - also called File Share in some of the notebooks
+BlobContainerName=
 # The name of the Synapse Workspace
 SynapseWorkspaceName=
 # The Synapse SQL user
@@ -281,6 +281,8 @@ Dataset | Description | Labels |
     Alex Hocking</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/sweanan"><img src="https://avatars.githubusercontent.com/sweanan" width="100px;" alt=""/><br><sub><b>
     Swetha Anand</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/katriendg"><img src="https://avatars.githubusercontent.com/u/838216?v=4" width="100px;" alt=""/><br /><sub><b>
+    Katrien De Graeve</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/sushaanttb"><img src="https://avatars.githubusercontent.com/sushaanttb" width="100px;" alt=""/><br><sub><b>
     Sushant Bhalla</b></sub></a><br /></td>
   </tr>

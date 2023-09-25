@@ -18,7 +18,7 @@ az synapse workspace create \
   --name $SynapseWorkspaceName \
   --resource-group $SynapseResourceGroup \
   --storage-account $StorageAccountName \
-  --file-system $FileShareName \
+  --file-system $BlobContainerName \
   --sql-admin-login-user $SqlUser \
   --sql-admin-login-password $SqlPassword \
   --location $Region \
