@@ -46,14 +46,21 @@ echo "Open your Azure Synapse Workspace Web URL in the browser: $WorkspaceWeb"
 
 spID=$(az resource list -n $SynapseWorkspaceName --query [*].identity.principalId --out tsv)
 
-echo "Storage Account SP ID: $spID"
+echo "Synapse Workspace SP ID: $spID"
 
 az role assignment create \
     --assignee $spID \
     --role 'Storage Account Contributor' \
     --scope /subscriptions/$SubscriptionId/resourceGroups/$StorageAccountResourceGroup/providers/Microsoft.Storage/storageAccounts/$StorageAccountName
 
-echo "Assigned Workspace role to Storage Account"
+echo "Assigned Workspace to Storage Account as Storage Account Contributor"
+
+az role assignment create \
+    --assignee $spID \
+    --role 'Storage Blob Data Contributor' \
+    --scope /subscriptions/$SubscriptionId/resourceGroups/$StorageAccountResourceGroup/providers/Microsoft.Storage/storageAccounts/$StorageAccountName
+
+echo "Assigned Workspace to Storage Account as Storage Blob Data Contributor"
 
 userID=$(az ad signed-in-user show --query id --out tsv)
 
@@ -64,7 +71,14 @@ az role assignment create \
     --role 'Storage Account Contributor' \
     --scope /subscriptions/$SubscriptionId/resourceGroups/$StorageAccountResourceGroup/providers/Microsoft.Storage/storageAccounts/$StorageAccountName
 
-echo "Assigned User as Storage Account Contributor for Workspace"
+echo "Assigned User as Storage Account Contributor Role to Storage Account"
+
+az role assignment create \
+    --assignee $userID \
+    --role 'Storage Blob Data Contributor' \
+    --scope /subscriptions/$SubscriptionId/resourceGroups/$StorageAccountResourceGroup/providers/Microsoft.Storage/storageAccounts/$StorageAccountName
+
+echo "Assigned User as Storage Blob Data Contributor Role to Storage Account"
 
 az synapse spark pool create \
   --name "DataDiscovery" \
