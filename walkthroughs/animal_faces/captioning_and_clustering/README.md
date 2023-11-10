@@ -14,7 +14,7 @@ Upload the [data](/data/images/animal_faces/walkthrough/) to your primary ADLS a
 
 Ensure you have followed the steps in the [Image Captioning Setup](/environment_preparation/README.md#image-captioning-setup).
 
-Open the [Image Captioning Notebook](/synapse/notebooks/image_captioning/standalone_image_captioning.ipynb) in your Synapse instance, populate the parameters cell with the appropriate values:
+Open the [Image Captioning Notebook](../../../Synapse/notebooks/image_captioning/standalone_image_captioning.ipynb) in your Synapse instance, populate the parameters cell with the appropriate values:
 
 ```python
 
